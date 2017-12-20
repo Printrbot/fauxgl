@@ -23,7 +23,7 @@ const (
 
 var (
 	// render parameters
-	eye         = V(3, 1, 0.75)
+	eye         = V(3, 1, 1.75)
 	center      = V(0, 0, 0)
 	up          = V(0, 0, 1)
 	worldColor  = HexColor(defaultWorldColor)  // TODO add command-line arg
@@ -60,7 +60,7 @@ func main() {
 	mesh.BiUnitCube()
 	// rotate on z-axis
 	mesh.Transform(Rotate(V(0, 0, 1.0), Radians(-90)))
-	mesh.SmoothNormalsThreshold(Radians(30))
+	//mesh.SmoothNormalsThreshold(Radians(30))
 
 	start := time.Now()
 	context := NewContext(int(*width)*scale, int(*height)*scale)
